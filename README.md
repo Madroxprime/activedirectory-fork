@@ -53,6 +53,8 @@ Documentation
 * [findGroups](#findGroups)
 * [groupExists](#groupExists)
 * [userExists](#userExists)
+* [addUserToGroup](#addUserToGroup)
+* [removeUserFromGroup](#removeUserFromGroup)
 * [getGroupMembershipForGroup](#getGroupMembershipForGroup)
 * [getGroupMembershipForUser](#getGroupMembershipForUser)
 * [getUsersForGroup](#getUsersForGroup)
@@ -179,6 +181,34 @@ ad.userExists(username, function(err, exists) {
   console.log(username + ' exists: ' + exists);
 });
 ```
+---------------------------------------
+
+<a name="addUserToGroup" />
+### addUserToGroup(opts,username,groupname,callback)
+
+Adds specified user to the specified group
+
+__Arguments__
+* opts - Optional parameters to extend of override functionality. See [optional parameters](#opts)
+* username - The username to add to specified group. Can be a sAMAccountName, userPrincipalName, or a distinguishedName (dn)
+* groupname - The groupname to add to specified user to. Can be a commonName(cn) or a distinguishedName(dn)
+* callback - the callback to execute when completed. callback(err: {Object},result: {Boolean})
+
+__Example__
+
+---------------------------------------
+<a name="removeUserFromGroup" />
+### removeUserFromGroup(opts,username,groupname,callback)
+
+Removes specified user from the specified group
+
+__Arguments__
+* opts - Optional parameters to extend of override functionality. See [optional parameters](#opts)
+* username - The username to remove specified group. Can be a sAMAccountName, userPrincipalName, or a distinguishedName (dn)
+* groupname - The groupname to remove specified user from. Can be a commonName(cn) or a distinguishedName(dn)
+* callback - the callback to execute when completed. callback(err: {Object},result: {Boolean})
+
+__Example__
 
 ---------------------------------------
 
